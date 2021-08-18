@@ -15,7 +15,7 @@ This module is meant for use with Terraform 0.13 (and higher).
 
 ## Usage
 
-Full examples are in the [examples](./examples/) folder, demonstarte how to use a module through a template:
+Examples are captured in [examples](./examples/) folder, demonstarte how to use a module through a template:
 
 e.g:
 

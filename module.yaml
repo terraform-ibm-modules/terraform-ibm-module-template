@@ -1,0 +1,26 @@
+# Sample metadata file
+
+# name: ibm-mongodb
+# type: terraform
+# description: Module to provision Hyper Protect DBaaS for MongoDB instance
+# tags:
+#   - tools
+#   - infrastructure
+#   - mongodb
+#   - saas
+# versions:
+# - platforms: []
+#   dependencies:
+#     - id: resource_group
+#       refs:
+#         - source: github.com/cloud-native-toolkit/terraform-ibm-resource-group
+#           version: ">= 2.1.0"
+#  variables:
+#    - name: resource_group_name
+#      moduleRef:
+#        id: resource_group
+#        output: name
+#    - name: ibmcloud_api_key
+#      scope: global
+#    - name: name_prefix
+#      scope: global
