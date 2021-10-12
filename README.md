@@ -80,6 +80,32 @@ or
 ```
 pip3 install pre-commit
 ```
+### Detect Secret hook
+
+Used to detect secrets within a code base.
+
+To create a secret baseline file run following command
+
+```
+detect-secrets scan --update .secrets.baseline
+```
+
+While running the pre-commit hook, if you encounter an error like
+
+```
+WARNING: You are running an outdated version of detect-secrets.
+Your version: 0.13.1+ibm.27.dss
+Latest version: 0.13.1+ibm.46.dss
+See upgrade guide at https://ibm.biz/detect-secrets-how-to-upgrade
+```
+
+run below command
+
+```
+pre-commit autoupdate
+```
+which upgrades all the pre-commit hooks present in .pre-commit.yaml file.
+
 ## How to input variable values through a file
 
 To review the plan for the configuration defined (no resources actually provisioned)
