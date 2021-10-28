@@ -1,26 +1,142 @@
-# Sample metadata file
+# This is just a sample example for module metadata which captures below information:
+# Basic information about module 
+    # Repository path
+    # Registry path
+    # Description about module
+# Tags which are being used to filter the module (search tags)
+# List of resources and data sources module consists of
+# List of other modules (repo & version) current module refer to
+# List of input variables. Can consists of following fields
+     # name:  Name of the variable
+     # type: Type of variable
+     # required: Is it required input 
+     # default: provide if it has any default values
+     # cloud_provider: Mention the provider
+     # cloud_data_filter: Apply filters like e.g resource_group_id which helps any tool which consumes this file to filter-out the say resource instances belongs to particular resource group
+     # description: short decription about variable
+     # validation: Perform validation checks like regex() / min-max values / input is one of the expected values are not
+     # example: provide some input example
+     # sensitive: is it sensitive data
+# List of output variables. Can consists of following fields
+     # name: Name of the output variable
+     # type: Type of the output variable
+     # description: short description about output
+     # example: provide some output example how it looks like
+     # sensitive: is it sensitive data
 
-# name: ibm-mongodb
-# type: terraform
-# description: Module to provision Hyper Protect DBaaS for MongoDB instance
-# tags:
-#   - tools
-#   - infrastructure
-#   - mongodb
-#   - saas
-# versions:
-# - platforms: []
-#   dependencies:
-#     - id: resource_group
-#       refs:
-#         - source: github.com/cloud-native-toolkit/terraform-ibm-resource-group
-#           version: ">= 2.1.0"
-#  variables:
-#    - name: resource_group_name
-#      moduleRef:
-#        id: resource_group
-#        output: name
-#    - name: ibmcloud_api_key
-#      scope: global
-#    - name: name_prefix
-#      scope: global
+# NOTE: Omit the filed if it not applicable in current variable context. what does it mean ? 
+# Feild "default" is not applicable for required variables, in such cases we need not inlcude the "default" field in that variable context.
+
+name: terraform-ibm-cos
+alias: cos
+type: terraform
+description: Provisions an IBM Cloud COS bucket
+repository: https://github.com/terraform-ibm-modules/terraform-ibm-cos
+source: git@github.com:terraform-ibm-modules/terraform-ibm-cos.git
+registry: https://registry.terraform.io/modules/terraform-ibm-modules/cos/ibm/latest
+tags:
+    - cos
+    - bucket
+    - cos-instance
+    - cos-bucket
+    - storage
+resources:
+    - type: ibm_cos_bucket
+      name: bucket
+      depends_on: [ibm_resource_instance]
+      count: 1
+      description: "Used to create a COS bucket"
+    - type: ibm_resource_instance
+      name: cos_instance
+      count: 1
+      description: "Used to create a COS instance"
+    - type: ibm_resource_key
+      name: key
+      dependent_on: [cos_instance]
+      description: "Used to attach key to cos instance"
+data_sources:
+    - type: ibm_resource_group
+      name: resource_group
+      count: 1
+      description: "To assign a COS instance to a particular resource group"
+modules:
+    refs:
+        - source: github.com/cloud-native-toolkit/terraform-ibm-resource-group
+          version: ">= 1.0.0"
+input_variables:
+    - name: bucket_name
+      type: string
+      required: true
+      default: NA
+      cloud_provider: "ibm"
+      cloud_data_filter: "resource_group_id"
+      description: "Name of the bucket"
+      validation: regex()
+      example: "test-bucket"
+      sensitive: false
+    - name: location
+      type: string
+      cloud_provider: "aws"
+      cloud_data_filter: "resource_group_id"
+      required: true
+      default: NA
+      description: "single site or region or cross region location info"
+      validation: OneOf("us-south","us-east")
+      example: "us-south"
+      sensitive: false
+    - name: storage_class
+      type: string
+      cloud_provider: "aws"
+      cloud_data_filter: NA
+      required: true
+      default: NA
+      description: "Storage class of the bucket"
+      validation: OneOf()
+      example: "standard"
+      sensitive: false
+    - name: endpoint_type
+      type: string
+      cloud_provider: "aws"
+      cloud_data_filter: NA
+      required: true
+      default: "public"
+      description: "Type of end-point"
+      validation: OneOf("public","private")
+      example: "private"
+      sensitive: false
+    - name: service_name
+      type: string
+      cloud_provider: "aws"
+      cloud_data_filter: NA
+      required: true
+      default: "test-cos-instance"
+      description: "Name of the COS instance"
+      validation: regex()
+      example: "test-cos-instance"
+      sensitive: false
+    - name: plan
+      type: string
+      cloud_provider: "aws"
+      cloud_data_filter: NA
+      required: true
+      default: "lite"
+      description: "Plan type"
+      validation: Oneof("lite","7-day")
+      example: "test-cos-instance"
+      sensitive: false
+output_variables:
+    - name: cos_bucket_id
+      type: string
+      description: "The ID of the cos bucket"
+      example: "bucket-67354"
+      sensitive: false
+    - name: cos_instance_id
+      type: string
+      description: "The ID of the cos instance"
+      example: "cos-738465293"
+      sensitive: false
+    - name: cos_key_id
+      type: string
+      description: "The ID of the key"
+      example: "key-83645"
+      sensitive: false
