@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 Extending the adopted spec, each change should have a link to its
 corresponding pull request appended.
 
-## [1.0.0] - 2021-03-18
+## [Release_version] - Date
 
-This is the initial release of the module, with support for <module_name_here> resources.
+Can have following 3 sections
+
+* FEATURES:      Description (pullRequest link)
+* IMPROVEMENTS:  Description (pullRequest link)
+* BUGS:          Description (pullRequest link)
+
+## Sample Changelog:
+
+## v1.1 (January 2020)
+
+FEATURES: 
+* **new feature:**  Add support for naming convention ([#3](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/tree/master/modules))
+* **new feature:**  Add examples ([#2](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/issues/2))
+
+IMPROVEMENTS:
+* **improvement:**  Unifing input variable names accross CAF modules (resource_group_name -> rg,log_analytics_workspace_id -> la_workspace_id) ([#5](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/issues/5))
+
+BUGS:
+* **bug fix:** Support for eventhub diagnostics is now optionnal ([#6](https://github.com/terraform-ibm-modules/terraform-ibm-cluster/issues/6)) 
