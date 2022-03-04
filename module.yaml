@@ -1,5 +1,5 @@
 # This is just a sample example for module metadata which captures below information:
-# Basic information about module 
+# Basic information about module
     # Repository path
     # Registry path
     # Description about module
@@ -9,7 +9,7 @@
 # List of input variables. Can consists of following fields
      # name:  Name of the variable
      # type: Type of variable
-     # required: Is it required input 
+     # required: Is it required input
      # default: provide if it has any default values
      # cloud_provider: Mention the provider
      # cloud_data_filter: Apply filters like e.g resource_group_id which helps any tool which consumes this file to filter-out the say resource instances belongs to particular resource group
@@ -24,7 +24,7 @@
      # example: provide some output example how it looks like
      # sensitive: is it sensitive data
 
-# NOTE: Omit the filed if it not applicable in current variable context. what does it mean ? 
+# NOTE: Omit the filed if it not applicable in current variable context. what does it mean ?
 # Feild "default" is not applicable for required variables, in such cases we need not inlcude the "default" field in that variable context.
 
 name: terraform-ibm-cos
