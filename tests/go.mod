@@ -1,4 +1,4 @@
-module github.ibm.com/GoldenEye/terraform-ibm-module-template
+module github.com/terraform-ibm-modules/terraform-ibm-module-template
 
 go 1.18
 
