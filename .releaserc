@@ -1,7 +1,7 @@
 {
     "tagFormat": "v${version}",
     "branches": [
-        "main"
+        "release-pipeline-work"
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
