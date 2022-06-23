@@ -17,7 +17,7 @@ To test the module, you test the example code in the `examples` folder.
         - Runs `terraform init` and `terraform apply`.
         - Runs `terraform plan` to ensure idempotency if the init and apply commands pass.
 
-          The test fails if the plan identifies any changes (the module is not idempotent). Some modules might have changes expected changes. For more information about how to address changes, see the following [Ignoring expected changes](#ignoring-expected-changes) section.
+          The test fails if the plan identifies any changes (the module is not idempotent) and some modules have expected changes. For more information about how to address changes, see the following [Ignoring expected changes](#ignoring-expected-changes) section.
         - Runs `terraform destroy` at the end of the test, whether the previous commands pass or fail.
 
     - **Upgrade test**
@@ -40,7 +40,7 @@ When you create tests for a new module, follow these steps.
 1.  Use the latest templates from the [terraform-ibm-module-template](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/tests) and update the relevant code.
 
     - Configure the tests to use a separate resource group for each the module if you provision resources.
-    - If you provision resources that require a resource group, work with the core team to have a resource group created in the dev account for the new module.
+    - If you provision resources that require a resource group, work with the maintainers to create a resource group in the dev account for the new module.
 1.  Update the module name in the `go.mod` file.
 1.  Generate or update the `go.sum` file by running the following `make` command:
 
@@ -48,7 +48,7 @@ When you create tests for a new module, follow these steps.
     make go-mod-tidy
     ```
 
-:information_source: This `make` command also supports a variable that is called `GO_MOD_ARGS` to pass more arguments to the `go mod tidy` command. For example, you can pass `GO_MOD_ARGS=-compat=1.18` to enforce compatibility with version 1.18.
+    :information_source: This `make` command also supports a variable that is called `GO_MOD_ARGS` to pass more arguments to the `go mod tidy` command. For example, you can pass `GO_MOD_ARGS=-compat=1.18` to enforce compatibility with version 1.18.
 1.  Ensure to commit any changes to the `go.mod` and `go.sum` files.
 
 ## Running the tests
