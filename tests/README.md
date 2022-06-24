@@ -7,7 +7,7 @@ To test the module, you test the example code in the `examples` folder.
 
 ## Types of tests
 
-### [pr_test.go](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/pr_test.go)
+### [pr_test.go](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/pr_test.go)
 
 - Include all tests that you want to run in the PR pipeline in this PR test.
 - Make sure that you include at least these two tests:
@@ -26,9 +26,9 @@ To test the module, you test the example code in the `examples` folder.
 
       If the change breaks example code but not module code, include `SKIP UPGRADE TEST` in the commit message. Make sure to describe why you are breaking the example in the PR description.
 
-      :information_source: The upgrade test is disabled by default in the [terraform-ibm-module-template pr_test.go](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/pr_test.go) because you can't run an upgrade test until the initial module code is merged to the main branch. After the initial merge, create a pull request to enable the upgrade test by commenting out the line that starts with `t.Skip`.
+      :information_source: The upgrade test is disabled by default in the [terraform-ibm-module-template pr_test.go](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/pr_test.go) because you can't run an upgrade test until the initial module code is merged to the main branch. After the initial merge, create a pull request to enable the upgrade test by commenting out the line that starts with `t.Skip`.
 
-### [other_test.go](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/other_test.go)
+### [other_test.go](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/tests/other_test.go)
 
 - The tests in this file do not run in the PR pipeline. However, they are run in the continuous testing pipeline (internally).
 - Use the `other_test.go` file to test end-to-end examples that are not run in `pr_test.go`.
@@ -37,7 +37,7 @@ To test the module, you test the example code in the `examples` folder.
 
 When you create tests for a new module, follow these steps.
 
-1.  Use the latest templates from the [terraform-ibm-module-template](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/tests) and update the relevant code.
+1.  Use the latest templates from the [terraform-ibm-module-template](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/tests) and update the relevant code.
 
     - Configure the tests to use a separate resource group for each the module if you provision resources.
     - If you provision resources that require a resource group, work with the maintainers to create a resource group in the dev account for the new module.
@@ -54,7 +54,7 @@ When you create tests for a new module, follow these steps.
 ## Running the tests
 
 1.  Set the following environment variables:
-    - `TF_VAR_ibmcloud_api_key`: An IBM Cloud API key for the account that the test uses to provision resources.
+    - `IC_API_KEY` or `TF_VAR_ibmcloud_api_key`: An IBM Cloud API key for the account that the test uses to provision resources.
     - (Optional) `DO_NOT_DESTROY_ON_FAILURE`: Set this variable to `true` if you do not want to destroy resources when the test fails.
     - (Optional) `FORCE_TEST_REGION`: By default the tests select a region to provision resources in based on current region availability. This variable can be used to force a specific region, if required.
 1.  Run the tests:
@@ -75,7 +75,7 @@ When you create tests for a new module, follow these steps.
 
 Many examples require the same four input variables, `region`, `prefix`, `resource_group`, and `resource_tags`.
 
-- If your example uses all four of those variables, use `TestOptionsDefaultWithVars()`. The function is used in the [terraform-ibm-module-template](https://github.ibm.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/examples/default/variables.tf).
+- If your example uses all four of those variables, use `TestOptionsDefaultWithVars()`. The function is used in the [terraform-ibm-module-template](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/blob/main/examples/default/variables.tf).
 - If your example doesn't require all four variables, use `TestOptionsDefault()` with `options.TerraformVars` to pass the variables that the example needs.
 
 ### Ignoring expected changes
