@@ -1,0 +1,491 @@
+# Description : Metadata used to describe a Terraform Module and its contents.
+# Refer to the response payload here - https://www.terraform.io/docs/registry/api.html
+# Registry API, example for observability module: https://registry.terraform.io/v1/modules/terraform-ibm-modules/observability/ibm
+# Sample Terraform registry response payload  (./registry_api_payload/registry_payload.png)
+---
+id: "terraform-ibm-modules/observability/ibm/1.4.0"
+name: "observability"
+namespace: "terraform-ibm-modules"
+version: "1.4.0"
+providers: ["ibm"]
+provider_logo_url: "/images/providers/observability.jpg"
+description: "Terraform module to create and work with - IBM Log Analysis, IBM Cloud Monitoring, and IBM Activity Tracker services on IBM Cloud"
+source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability"
+owner: "ibmtfprovider"
+published_at: "2021-11-18T10:34:28.911362Z"
+registry: "https://registry.terraform.io/modules/terraform-ibm-modules/observability/ibm/latest"
+alias: "ob"
+tags: ["observability","activity-tracker","sysdig-monitoring","logdna","ats","atr","sts","str"]
+###################################
+# Root module
+###################################
+root:
+  - path: ""
+    name: "observability"
+    provider_dependencies:
+      - name: "ibm"
+        namespace: "IBM-Cloud"
+        source: "IBM-Cloud/ibm"
+        version: ""
+    inputs:
+      - name: "logging_name"
+        type: string
+        is_required: true
+        description: "Name of the logging instance"
+        example: "logging-test"
+        is_sensitive: false
+        related_to: ["logging_str_instance","logging_sts_instance"]
+        is_nullable: false
+        is_force_new: true
+        regex: "^([a-z]|[a-z][-a-z0-9]*[a-z0-9])$"
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "str_provision"
+        type: bool
+        is_required: true
+        description: "Controls the provisioning of logging STR instance"
+        example: true
+        is_sensitive: false
+        related_to: ["logging_str_instance"]
+        allowed_values: [true,false]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: true
+        is_count_controller: true
+      - name: "str_logging_bind_key"
+        type : bool
+        is_required: false
+        default_value: false
+        description: "Enable this flag to attach a key to STR instance."
+        example: true
+        is_sensitive: false
+        related_to: ["logging_str_instance"]
+        is_nullable: false
+        allowed_values: [true,false]
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "enable_platform_logs"
+        type : bool
+        is_required: false
+        default_value: true
+        description: "Receive platform logs in LogDNA"
+        example: true
+        is_sensitive: false
+        allowed_values: [true,false]
+        related_to: ["logging_str_instance"]
+        is_nullable: true
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "resource_group_id"
+        type : string
+        is_required: true
+        description: "ID of resource group"
+        example: "resource-group-1927364"
+        is_sensitive: false
+        related_to: ["logging_str_instance","logging_sts_instance","activity-tracker-atr-instance","activity-tracker-ats-instance","monitoring_instance"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "str_logging_plan"
+        type : string
+        is_required: true
+        description: "Plan type should be one of the following (14-day, 30-day, 7-day, hipaa-30-day and lite)."
+        example: "14-day"
+        allowed_values: ["14-day", "30-day", "7-day", "hipaa-30-day", "lite"]
+        is_sensitive: false
+        related_to: ["logging_str_instance"]
+        is_nullable: false
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "str_logging_region"
+        type : string
+        is_required: true
+        description: "The location where the instance available"
+        example: "us-south"
+        is_sensitive: false
+        related_to: ["logging_str_instance"]
+        is_nullable: false
+        is_force_new: true
+        cloud_data_type: "region"
+        cloud_data_range: "resource_group_id"
+        is_provision_controller: false
+        is_count_controller: false
+    outputs:
+      - name: "atr_id"
+        type : string
+        description : "ID of Activity Tracker ATR instance"
+        example: "crn-1734gd74"
+        is_sensitive: false
+        related_to: ["activity-tracker-atr-instance"]
+      - name: "ats_id"
+        type : string
+        description : "ID of Activity Tracker ATS instance"
+        example: "crn-1734gd74"
+        is_sensitive: false
+        related_to: ["activity-tracker-ats-instance"]
+      - name: "atr_guid"
+        type : string
+        description : "The GUID of the activity tracker ATR instance"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["activity-tracker-atr-instance"]
+    modules:
+      - name: "logging_str_instance"
+        id: "terraform-ibm-modules/observability/ibm/1.4.0/modules/logging-instance"
+        source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability/tree/main/modules/logging-instance"
+        description: "Used to provision Logging Super Tenant Receiver(STR) instance"
+      - name: "logging_sts_instance"
+        id: "terraform-ibm-modules/observability/ibm/1.4.0/modules/logging-instance"
+        source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability/tree/main/modules/logging-instance"
+        description: "To provision Logging Super Tenant Sender(STS) instance"
+      - name: activity-tracker-atr-instance
+        id: "terraform-ibm-modules/observability/ibm/1.4.0/modules/activity-tracker-instance"
+        source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability/tree/main/modules/activity-tracker-instance"
+        description: "To provision Activity Tracker Super Tenant Receiver(ATR) instance"
+      - name: activity-tracker-ats-instance
+        id: "terraform-ibm-modules/observability/ibm/1.4.0/modules/activity-tracker-instance"
+        source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability/tree/main/modules/activity-tracker-instance"
+        description: "To provision Activity Tracker Super Tenant Sender(ATS) instance"
+      - name: monitoring_instance
+        id: "terraform-ibm-modules/observability/ibm/1.4.0/modules/monitoring-sysdig"
+        source: "https://github.com/terraform-ibm-modules/terraform-ibm-observability/tree/main/modules/monitoring-sysdig"
+        description: "To provision sysdig monitoring instance"
+submodules:
+  ####################################
+  # logging-instance submodule
+  ####################################
+  - path: "modules/logging-instance"
+    name: "logging-instance"
+    provider_dependencies:
+      - name: "ibm"
+        namespace: ""
+        source: "IBM-Cloud/ibm"
+        version: ""
+    inputs:
+      - name: "provision"
+        type : bool
+        is_required: false
+        default_value: true
+        description: "Enable this to create new logging instance"
+        example: true
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.logging_instance","ibm_resource_key.logging_key"]
+        allowed_values: [true,false]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: true
+        is_count_controller: true
+      - name: "name"
+        type : string
+        is_required: true
+        description: "Name of the logging instance"
+        example: "at"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.logging_instance"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "region"
+        type : string
+        is_required: true
+        description: "Geographic location of the resource (e.g. us-south, us-east)"
+        example: "us-south"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.logging_instance"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+    outputs:
+      - name: "id"
+        type : string
+        description : "ID of logging instance"
+        example: "crn-1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.logging_instance"]
+      - name: "guid"
+        type : string
+        description : "The GUID of the logging instance"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.logging_instance"]
+      - name: "key_id"
+        type : string
+        description : "logging instance key id"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.logging_key"]
+      - name: "key_guid"
+        type : string
+        description : "logging instance key gid"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.logging_key"]
+      - name: "key_credentials"
+        type : string
+        description : "logging instance key credentials"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.logging_key"]
+    locals:
+      - name: "sts_parameters"
+        type : map
+        example: {"service_supertenant"    = var.service_supertenant}
+        description : "List of parameters required to provision logging STS instance"
+        is_hardcoded : false
+        related_to: ["ibm_resource_instance.logging_instance"]
+        derived_from: ["service_supertenant","associated_logging_crn","provision_key"]
+      - name: "str_parameters"
+        type: map
+        example: {"default_receiver" = var.enable_platform_logs"}
+        description : "List of parameters required to provision logging STR instance"
+        is_hardcoded : false
+        related_to: ["ibm_resource_instance.logging_instance"]
+        derived_from: ["enable_platform_logs"]
+    resources:
+      - type : "ibm_resource_instance"
+        name: "logging_instance"
+        description : "Used to provision either logging STS or STR instance"
+        provider: "ibm"
+      - type : "ibm_resource_key"
+        name: "logging_key"
+        description : "Used to attach a key to logging instance"
+        provider: "ibm"
+        dependent_on: ["ibm_resource_instance.logging_instance"]
+    datasources:
+      - type : "ibm_resource_instance"
+        name: "logging_instance"
+        description : "Used to read existing logging instance"
+        provider: "ibm"
+  ####################################
+  # activity-tracker-instance submodule
+  ####################################
+  - path: "modules/activity-tracker-instance"
+    name: "activity-tracker-instance"
+    provider_dependencies:
+      - name: "ibm"
+        namespace: ""
+        source: "IBM-Cloud/ibm"
+        version: ""
+    inputs:
+      - name: "provision"
+        type : bool
+        is_required: false
+        default_value: true
+        description: "Enable this to create new activity tracker instance"
+        example: true
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker","ibm_resource_key.activity_tracker_key"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: true
+        is_count_controller: true
+      - name: "name"
+        type : string
+        is_required: true
+        description: "Name of the activity tracker instance"
+        example: "at"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker","data.ibm_resource_instance.activity_tracker"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "region"
+        type : string
+        is_required: true
+        description: "Geographic location of the resource (e.g. us-south, us-east)"
+        example: "us-south"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker","data.ibm_resource_instance.activity_tracker"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "resource_group_id"
+        type : string
+        is_required: false
+        description: "The ID of the resource group where you want to create the service."
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker","data.ibm_resource_instance.activity_tracker"]
+        is_nullable: true
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+    outputs:
+      - name: "id"
+        type : string
+        description : "ID of Activity Tracker instance"
+        example: "crn-1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker"]
+      - name: "guid"
+        type : string
+        description : "The GUID of the activity tracker"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.activity_tracker"]
+      - name: "key_id"
+        type : string
+        description : "Activity Tracker instance key id"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.activity_tracker_key"]
+      - name: "key_guid"
+        type : string
+        description : "Activity Tracker instance key guid"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.activity_tracker_key"]
+      - name: "key_credentials"
+        type : string
+        description : "Activity Tracker ATS key credentials"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.activity_tracker_key"]
+    locals:
+      - name: "ats_parameters"
+        type : map
+        example: "{
+          "service_supertenant"    = var.service_supertenant
+          "associated_logging_crn" = var.associated_logging_crn
+          "provision_key"          = var.provision_key}"
+        description : "List of parameters required to provision ATS instance"
+        is_hardcoded : false
+        related_to: ["ibm_resource_instance.activity_tracker"]
+        derived_from: ["service_supertenant","associated_logging_crn","provision_key"]
+      - name: "atr_parameters"
+        type: map
+        example: "{
+          "default_receiver" = var.make_default_receiver}"
+        description : "List of parameters required to provision ATR instance"
+        is_hardcoded : false
+        related_to: ["ibm_resource_instance.activity_tracker"]
+        derived_from: ["make_default_receiver"]
+    resources:
+      - type : "ibm_resource_instance"
+        name: "activity_tracker"
+        description : "Used to provision either ATS or ATR instance"
+        provider: "ibm"
+      - type : "ibm_resource_key"
+        name: "activity_tracker_key"
+        description : "Used to attach a key to activity tracker instance"
+        provider: "ibm"
+        dependent_on: ["ibm_resource_instance.activity_tracker"]
+    datasources:
+      - type : "ibm_resource_instance"
+        name: "activity_tracker"
+        description : "Used to read existing activity tracker instance"
+        provider: "ibm"
+  ####################################
+  # monitoring-sysdig submodule
+  ####################################
+  - path: "modules/monitoring-sysdig"
+    name: "monitoring-sysdig"
+    provider_dependencies:
+      - name: "ibm"
+        namespace: ""
+        source: "IBM-Cloud/ibm"
+        version: ""
+      - name: "sysdig"
+        namespace: ""
+        source: "sysdiglabs/sysdig"
+        version: "0.5.10"
+    inputs:
+      - name: "provision"
+        type : bool
+        is_required: false
+        default_value: true
+        description: "Enable this to create new monitoring instance"
+        example: true
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance","ibm_resource_key.sysdigKey"]
+        allowed_values: [true,false]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: true
+        is_count_controller: true
+      - name: "name"
+        type : string
+        is_required: true
+        description: "Name of the monitoring instance"
+        example: "at"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "region"
+        type : string
+        is_required: true
+        description: "Geographic location of the resource (e.g. us-south, us-east)"
+        example: "us-south"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance"]
+        is_nullable: false
+        is_force_new: true
+        is_provision_controller: false
+        is_count_controller: false
+      - name: "resource_group_id"
+        type : string
+        is_required: false
+        description: "The ID of the resource group where you want to create the service."
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance"]
+        is_nullable: true
+        is_force_new: false
+        is_provision_controller: false
+        is_count_controller: false
+    outputs:
+      - name: "id"
+        type : string
+        description : "ID of monitoring instance"
+        example: "crn-1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance"]
+      - name: "guid"
+        type : string
+        description : "The GUID of the monitoring instance"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_instance.sysdig_instance"]
+      - name: "key_id"
+        type : string
+        description : "monitoring instance key id"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.sysdigKey"]
+      - name: "key_guid"
+        type : string
+        description : "monitoring instance key gid"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.sysdigKey"]
+      - name: "key_credentials"
+        type : string
+        description : "monitoring instance key credentials"
+        example: "1734gd74"
+        is_sensitive: false
+        related_to: ["ibm_resource_key.sysdigKey"]
+    resources:
+      - type : "ibm_resource_instance"
+        name: "sysdig_instance"
+        description : "Used to provision monitoring instance"
+        provider: "ibm"
+      - type : "ibm_resource_key"
+        name: "sysdigKey"
+        description : "Used to attach a key to monitoring instance"
+        provider: "ibm"
+        dependent_on: ["ibm_resource_instance.sysdig_instance"]
+    datasources:
+      - type : "ibm_resource_instance"
+        name: "sysdig"
+        description : "Used to read existing monitoring instance"
+        provider: "ibm"
+
