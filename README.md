@@ -26,9 +26,9 @@ You can add other content to support what your module does and how it works. For
 
 Follow this process to create and submit a Terraform module.
 
-### Create a new repo from this repo template
+### Create a repo from this repo template
 
-Create a new repository from this repository template by clicking `Use this template` in the GitHub UI (top right). For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI. For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
 ### Clone the repo and set up your development environment
 
@@ -49,12 +49,12 @@ After you implement the logic for your module and create examples and tests, upd
 1.  Update the title heading and add a description about your module.
 1.  Update the badge links.
 1.  Remove all the content in this H2 heading section.
-1.  Complete the [Usage](#usage), [Required IAM access policies](#required-iam-access-policies) and [Examples](#examples) sections. The [Requirements](#requirements) section is populated by a pre-commit hook.
+1.  Complete the [Usage](#usage), [Required IAM access policies](#required-iam-access-policies), and [Examples](#examples) sections. The [Requirements](#requirements) section is populated by a pre-commit hook.
 
 ### Commit your code and submit your module for review
 
-1.  Before you commit any code, review the contributing guidelines [coming soon]
-1.  Create a pull request for review
+1.  Before you commit any code, review the contributing guidelines [coming soon].
+1.  Create a pull request for review.
 
 ### Post-merge steps
 After the first PR for your module is merged, follow these post-merge steps:
@@ -91,7 +91,7 @@ Manage > Access (IAM) > Access groups > Access policies.
 
 <!-- Update the sample examples in the examples folder and link to them. -->
 - [End to end example with default values](examples/default)
-- [End to end example with non default values](examples/non-default)
+- [End to end example with nondefault values](examples/non-default)
 - [Example that uses existing resources](examples/existing-resources)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
