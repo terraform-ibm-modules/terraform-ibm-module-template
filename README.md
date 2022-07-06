@@ -32,7 +32,7 @@ Create a repository from this repository template by clicking `Use this template
 
 ### Clone the repo and set up your development environment
 
-Locally clone the new repository and set up your development environment by completing the tasks in [coming soon]
+Locally clone the new repository and set up your development environment by completing the tasks in [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
 
 ### Update the Terraform files
 
@@ -53,7 +53,7 @@ After you implement the logic for your module and create examples and tests, upd
 
 ### Commit your code and submit your module for review
 
-1.  Before you commit any code, review the contributing guidelines [coming soon].
+1.  Before you commit any code, review [Contributing to the IBM Cloud Terraform modules project](https://terraform-ibm-modules.github.io/documentation/#/contribute-module) in the project documentation.
 1.  Create a pull request for review.
 
 ### Post-merge steps
@@ -119,5 +119,6 @@ No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 <!-- Leave this section as is so that your module has a link to local development environment set up steps for contributors to follow -->
+
 ## Developing
-To set up your local development environment, see steps [coming soon]
+To set up your local development environment, see [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
