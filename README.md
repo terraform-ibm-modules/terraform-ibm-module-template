@@ -22,13 +22,24 @@ The default structure includes the following files:
 - `variables.tf`: The input variables for the module
 - `outputs.tf`: The values that are output from the module
 
+For more information, see [Module structure](https://terraform-ibm-modules.github.io/documentation/#/module-structure) in the project documentation.
+
 You can add other content to support what your module does and how it works. For example, you might add a `scripts/` directory that contains shell scripts that are run by a `local-exec` `null_resource` in the Terraform module.
 
 Follow this process to create and submit a Terraform module.
 
 ### Create a repo from this repo template
 
-Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI. For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+1.  Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI.
+
+    For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+1.  Select `terraform-ibm-modules` as the owner.
+1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
+
+    Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
+1.  Provide a short description of the module.
+
+    The description is displayed under the repository title on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand what your repo does by looking at the description.
 
 ### Clone the repo and set up your development environment
 
@@ -120,5 +131,8 @@ No outputs.
 
 <!-- Leave this section as is so that your module has a link to local development environment set up steps for contributors to follow -->
 
-## Developing
+## Contributing
+
+You can report issues and request features for this module in the [terraform-ibm-issue-tracker](https://github.com/terraform-ibm-modules/terraform-ibm-issue-tracker/issues) repo. See [Report an issue or request a feature](SUPPORT.md).
+
 To set up your local development environment, see [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
