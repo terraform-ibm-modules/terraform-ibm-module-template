@@ -8,7 +8,7 @@ import (
 	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testhelper"
 )
 
-// Use existing resource group
+// Resource groups are maintained https://github.ibm.com/GoldenEye/ge-dev-account-management
 const resourceGroup = "geretain-test-mod-template"
 const defaultExampleTerraformDir = "examples/default"
 

@@ -1,4 +1,5 @@
-module github.com/terraform-ibm-modules/terraform-ibm-module-template
+// TODO: Update the module name here to match the GIT repo in which this file belongs to (remove the comment once done)
+module github.ibm.com/GoldenEye/module-template
 
 go 1.18
 

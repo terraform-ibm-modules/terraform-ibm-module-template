@@ -1,0 +1,32 @@
+---
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+git:
+  # Disabling git depth to get a deep clone of the source repo with the full history (required for run_tests.sh)
+  depth: false
+  # As per travis docs, need to disable automatic loading of submodules as we are writing credentials to ~/.netrc
+  submodules: false
+
+before_install:
+  - echo -e "machine github.ibm.com\n  login $GH_TOKEN" > ~/.netrc
+  - git submodule update --init --recursive
+
+before_script:
+  # Always pull docker ci image since we use a static image tag
+  - make docker-pull
+  # Check for pre-commit updates if renovate PR
+  - make renovate-sweeper
+  # run pre-commit against all files
+  - make pre-commit
+
+# Failed commands in script stage will not hard fail the pipeline. Workaround: - command || travis_terminate 1
+script:
+  # Run tests
+  - make run-tests || travis_terminate 1
+  # semantic-release
+  - make sem-release || travis_terminate 1

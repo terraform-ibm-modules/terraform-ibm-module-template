@@ -1,5 +1,1 @@
-/********************************************************************
-
-This file is used to implement the ROOT module.
-
-*********************************************************************/
+# The logic for the module should go here

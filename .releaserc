@@ -1,15 +1,12 @@
 {
-  "tagFormat": "v${version}",
-  "branches": ["main"],
+  "tagFormat": "${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/github",
-    ["@semantic-release/git", {
-      "assets": "false"
-    }],
-    ["@semantic-release/exec", {
-      "successCmd": "echo \"SEMVER_VERSION=${nextRelease.version}\" >> $GITHUB_ENV"
+    "@semantic-release/changelog",
+    ["@semantic-release/github",{
+      "githubUrl": "https://github.ibm.com",
+      "githubApiPathPrefix": "/api/v3"
     }]
   ]
 }
