@@ -76,19 +76,29 @@ After the first PR for your module is merged, follow these post-merge steps:
 
 ## Usage
 
-<!-- Add sample usage of the module itself in the following code block -->
+<!--
+Add an example of the use of the module in the following code block.
+
+Use real values instead of "var.<var_name>" or other placeholder values
+unless real values don't help users know what to change.
+-->
+
 ```hcl
 
 ```
 
 ## Required IAM access policies
-You need the following permissions to run this module.
+
+<!-- PERMISSIONS REQUIRED TO RUN MODULE
+If this module requires permissions, uncomment the following block and update
+the sample permissions, following the format.
+Replace the sample Account and IBM Cloud service names and roles with the
+information in the console at
+Manage > Access (IAM) > Access groups > Access policies.
+-->
 
 <!--
-Update these sample permissions, following this format. Replace the sample
-Cloud service name and roles with the information in the console at
-Manage > Access (IAM) > Access groups > Access policies.
- -->
+You need the following permissions to run this module.
 
 - Account Management
     - **Sample Account Service** service
@@ -97,6 +107,14 @@ Manage > Access (IAM) > Access groups > Access policies.
 - IAM Services
     - **Sample Cloud Service** service
         - `Administrator` platform access
+-->
+
+<!-- NO PERMISSIONS FOR MODULE
+If no permissions are required for the module, uncomment the following
+statement instead the previous block.
+-->
+
+<!-- No permissions are needed to run this module.-->
 
 ## Examples
 
