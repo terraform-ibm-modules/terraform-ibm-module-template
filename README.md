@@ -140,7 +140,7 @@ To set up your local development environment, see [Local development setup](http
 <!-- BEGIN EXAMPLES HOOK -->
 ## Examples
 
-- [# Default example](examples/default)
-- [# Non default example](examples/non-default)
-- [# Example that uses existing resources](examples/existing-resources)
+- [ Default example](examples/default)
+- [ Non default example](examples/non-default)
+- [ Example that uses existing resources](examples/existing-resources)
 <!-- END EXAMPLES HOOK -->
