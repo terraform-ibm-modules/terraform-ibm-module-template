@@ -116,12 +116,13 @@ statement instead the previous block.
 
 <!-- No permissions are needed to run this module.-->
 
+<!-- BEGIN EXAMPLES HOOK -->
 ## Examples
 
-<!-- Update the sample examples in the examples folder and link to them. -->
-- [End to end example with default values](examples/default)
-- [End to end example with nondefault values](examples/non-default)
-- [Example that uses existing resources](examples/existing-resources)
+- [ Default example](examples/default)
+- [ Example that uses existing resources](examples/existing-resources)
+- [ Non default example](examples/non-default)
+<!-- END EXAMPLES HOOK -->
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -154,11 +155,3 @@ No outputs.
 You can report issues and request features for this module in the [terraform-ibm-issue-tracker](https://github.com/terraform-ibm-modules/terraform-ibm-issue-tracker/issues) repo. See [Report an issue or request a feature](https://github.com/terraform-ibm-modules/.github/blob/main/.github/SUPPORT.md).
 
 To set up your local development environment, see [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
-
-<!-- BEGIN EXAMPLES HOOK -->
-## Examples
-
-- [# Default example](examples/default)
-- [# Non default example](examples/non-default)
-- [# Example that uses existing resources](examples/existing-resources)
-<!-- END EXAMPLES HOOK -->
