@@ -9,7 +9,7 @@ import (
 )
 
 // Use existing resource group
-const resourceGroup = "geretain-test-mod-template"
+const resourceGroup = "geretain-test-resources"
 const defaultExampleTerraformDir = "examples/default"
 
 func TestRunDefaultExample(t *testing.T) {
