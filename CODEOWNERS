@@ -1,0 +1,21 @@
+# Default owners for everything in the repo, unless a later match takes precedence
+# add github handle - if more than one, open a ticket in https://github.com/terraform-ibm-modules/terraform-ibm-issue-tracker to request a GitHub team to be created
+# @your-github-handle
+
+# Below are common files across all modules in the terraform-ibm-modules organization
+
+/common-dev-assets/ @terraform-ibm-modules/github-saf
+Makefile @terraform-ibm-modules/github-saf
+renovate.json @terraform-ibm-modules/github-saf
+.releaserc @terraform-ibm-modules/github-saf
+ci/ @terraform-ibm-modules/github-saf
+.github/ @terraform-ibm-modules/github-saf
+.gitignore @terraform-ibm-modules/github-saf
+.gitmodules @terraform-ibm-modules/github-saf
+CODEOWNERS @terraform-ibm-modules/github-saf
+LICENSE @terraform-ibm-modules/github-saf
+catalogValidationValues.json.template
+Brewfile
+
+# Documentation should go content writters
+*.md @terraform-ibm-modules/github-doc
