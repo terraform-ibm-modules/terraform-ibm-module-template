@@ -22,17 +22,28 @@ The default structure includes the following files:
 - `variables.tf`: The input variables for the module
 - `outputs.tf`: The values that are output from the module
 
+For more information, see [Module structure](https://terraform-ibm-modules.github.io/documentation/#/module-structure) in the project documentation.
+
 You can add other content to support what your module does and how it works. For example, you might add a `scripts/` directory that contains shell scripts that are run by a `local-exec` `null_resource` in the Terraform module.
 
 Follow this process to create and submit a Terraform module.
 
 ### Create a repo from this repo template
 
-Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI. For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+1.  Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI.
+
+    For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+1.  Select `terraform-ibm-modules` as the owner.
+1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
+
+    Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
+1.  Provide a short description of the module.
+
+    The description is displayed under the repository title on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand what your repo does by looking at the description.
 
 ### Clone the repo and set up your development environment
 
-Locally clone the new repository and set up your development environment by completing the tasks in [coming soon]
+Locally clone the new repository and set up your development environment by completing the tasks in [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
 
 ### Update the Terraform files
 
@@ -53,7 +64,7 @@ After you implement the logic for your module and create examples and tests, upd
 
 ### Commit your code and submit your module for review
 
-1.  Before you commit any code, review the contributing guidelines [coming soon].
+1.  Before you commit any code, review [Contributing to the IBM Cloud Terraform modules project](https://terraform-ibm-modules.github.io/documentation/#/contribute-module) in the project documentation.
 1.  Create a pull request for review.
 
 ### Post-merge steps
@@ -65,19 +76,29 @@ After the first PR for your module is merged, follow these post-merge steps:
 
 ## Usage
 
-<!-- Add sample usage of the module itself in the following code block -->
+<!--
+Add an example of the use of the module in the following code block.
+
+Use real values instead of "var.<var_name>" or other placeholder values
+unless real values don't help users know what to change.
+-->
+
 ```hcl
 
 ```
 
 ## Required IAM access policies
-You need the following permissions to run this module.
+
+<!-- PERMISSIONS REQUIRED TO RUN MODULE
+If this module requires permissions, uncomment the following block and update
+the sample permissions, following the format.
+Replace the sample Account and IBM Cloud service names and roles with the
+information in the console at
+Manage > Access (IAM) > Access groups > Access policies.
+-->
 
 <!--
-Update these sample permissions, following this format. Replace the sample
-Cloud service name and roles with the information in the console at
-Manage > Access (IAM) > Access groups > Access policies.
- -->
+You need the following permissions to run this module.
 
 - Account Management
     - **Sample Account Service** service
@@ -86,13 +107,22 @@ Manage > Access (IAM) > Access groups > Access policies.
 - IAM Services
     - **Sample Cloud Service** service
         - `Administrator` platform access
+-->
 
+<!-- NO PERMISSIONS FOR MODULE
+If no permissions are required for the module, uncomment the following
+statement instead the previous block.
+-->
+
+<!-- No permissions are needed to run this module.-->
+
+<!-- BEGIN EXAMPLES HOOK -->
 ## Examples
 
-<!-- Update the sample examples in the examples folder and link to them. -->
-- [End to end example with default values](examples/default)
-- [End to end example with nondefault values](examples/non-default)
-- [Example that uses existing resources](examples/existing-resources)
+- [ Default example](examples/default)
+- [ Example that uses existing resources](examples/existing-resources)
+- [ Non default example](examples/non-default)
+<!-- END EXAMPLES HOOK -->
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -119,5 +149,9 @@ No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 <!-- Leave this section as is so that your module has a link to local development environment set up steps for contributors to follow -->
-## Developing
-To set up your local development environment, see steps [coming soon]
+
+## Contributing
+
+You can report issues and request features for this module in the [terraform-ibm-issue-tracker](https://github.com/terraform-ibm-modules/terraform-ibm-issue-tracker/issues) repo. See [Report an issue or request a feature](https://github.com/terraform-ibm-modules/.github/blob/main/.github/SUPPORT.md).
+
+To set up your local development environment, see [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
