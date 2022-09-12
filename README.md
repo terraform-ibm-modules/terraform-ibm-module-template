@@ -31,17 +31,12 @@ Follow this process to create and submit a Terraform module.
 ### Create a repo from this repo template
 
 1.  Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI.
-
-> For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-2.  Select `terraform-ibm-modules` as the owner.
-3.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
-
-> Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
-
-4.  Provide a short description of the module.
-
-> The description is displayed under the repository title on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand what your repo does by looking at the description.
+&emsp;&emsp;&emsp;&emsp;<br>For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+1.  Select `terraform-ibm-modules` as the owner.
+1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
+&emsp;&emsp;&emsp;&emsp;<br>Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
+1.  Provide a short description of the module.
+&emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository title on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand what your repo does by looking at the description.
 
 ### Clone the repo and set up your development environment
 
@@ -60,14 +55,14 @@ Add one or more examples in the `examples` directory that consume your new modul
 After you implement the logic for your module and create examples and tests, update this readme file in your repository by following these steps:
 
 1.  Update the title heading and add a description about your module.
-2.  Update the badge links.
-3.  Remove all the content in this H2 heading section.
-4.  Complete the [Usage](#usage), [Required IAM access policies](#required-iam-access-policies), and [Examples](#examples) sections. The [Requirements](#requirements) section is populated by a pre-commit hook.
+1.  Update the badge links.
+1.  Remove all the content in this H2 heading section.
+1.  Complete the [Usage](#usage), [Required IAM access policies](#required-iam-access-policies), and [Examples](#examples) sections. The [Requirements](#requirements) section is populated by a pre-commit hook.
 
 ### Commit your code and submit your module for review
 
 1.  Before you commit any code, review [Contributing to the IBM Cloud Terraform modules project](https://terraform-ibm-modules.github.io/documentation/#/contribute-module) in the project documentation.
-2.  Create a pull request for review.
+1.  Create a pull request for review.
 
 ### Post-merge steps
 
@@ -95,7 +90,7 @@ unless real values don't help users know what to change.
 <!-- PERMISSIONS REQUIRED TO RUN MODULE
 If this module requires permissions, uncomment the following block and update
 the sample permissions, following the format.
-Replace the sample Account and Cloud service names and roles with the
+Replace the sample Account and IBM Cloud service names and roles with the
 information in the console at
 Manage > Access (IAM) > Access groups > Access policies.
 -->
@@ -104,12 +99,12 @@ Manage > Access (IAM) > Access groups > Access policies.
 You need the following permissions to run this module.
 
 - Account Management
-- **Sample Account Service** service
-- `Editor` platform access
-- `Manager` service access
-- IAM Services
-- **Sample Cloud Service** service
-- `Administrator` platform access
+    - **Sample Account Service** service
+        - `Editor` platform access
+        - `Manager` service access
+    - IAM Services
+        - **Sample Cloud Service** service
+            - `Administrator` platform access
 -->
 
 <!-- NO PERMISSIONS FOR MODULE
