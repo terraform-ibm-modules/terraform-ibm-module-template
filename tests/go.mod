@@ -1,4 +1,5 @@
-module github.com/terraform-ibm-modules/terraform-ibm-module-template
+// START MODULE NAME HOOK
+// END MODULE NAME HOOK
 
 go 1.19
 
