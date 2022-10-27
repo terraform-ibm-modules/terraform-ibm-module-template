@@ -1,11 +1,10 @@
 ##############################################################################
-# Input Variables
+# Outputs
 ##############################################################################
 
-#variable "myvariable" {
-#  type        = string
-#  description = "A description of my variable"
-#  default     = ""
+#output "myoutput" {
+#  description = "Description of my output"
+#  value       = "value"
 #}
 
 ##############################################################################
