@@ -38,11 +38,20 @@ Follow this process to create and submit a Terraform module.
 1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
 &emsp;&emsp;&emsp;&emsp;<br>Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
 1.  Provide a short description of the module.
-&emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository title on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand what your repo does by looking at the description.
+&emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository name on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand the purpose of your module. For more information, see [module names and descriptions](implementation-guidelines.md#module-names-and-descriptions).
 
 ### Clone the repo and set up your development environment
 
 Locally clone the new repository and set up your development environment by completing the tasks in [Local development setup](https://terraform-ibm-modules.github.io/documentation/#/local-dev-setup) in the project documentation.
+
+### Update the repo name and description in source control
+
+To help make sure that the repo name and description are not changed except through pull requests, they are defined in the `settings.yml` file.
+
+Check to make sure that values are uncommented and correct:
+
+1.  Open the [settings.yml](.github/settings.yml) file.
+1.  If not already updated, uncomment the `name` and `description` properties and set the values to what you specified when you requested the repo, as in the following example.
 
 ### Update the Terraform files
 
