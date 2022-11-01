@@ -38,7 +38,7 @@ Follow this process to create and submit a Terraform module.
 1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
 &emsp;&emsp;&emsp;&emsp;<br>Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
 1.  Provide a short description of the module.
-&emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository name on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand the purpose of your module. For more information, see [module names and descriptions](implementation-guidelines.md#module-names-and-descriptions).
+&emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository name on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand the purpose of your module. For more information, see [module names and descriptions](https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=module-names-and-descriptions) in the docs.
 
 ### Clone the repo and set up your development environment
 
@@ -51,7 +51,7 @@ To help make sure that the repo name and description are not changed except thro
 Check to make sure that values are uncommented and correct:
 
 1.  Open the [settings.yml](.github/settings.yml) file.
-1.  If not already updated, uncomment the `name` and `description` properties and set the values to what you specified when you requested the repo, as in the following example.
+1.  If not already updated, uncomment the `name` and `description` properties and set the values to what you specified when you requested the repo.
 
 ### Update the Terraform files
 
@@ -68,7 +68,7 @@ After you implement the logic for your module and create examples and tests, upd
 1.  Update the title heading and add a description about your module.
 1.  Update the badge links.
 1.  Remove all the content in this H2 heading section.
-1.  Complete the [Usage](#usage), [Required IAM access policies](#required-iam-access-policies), and [Examples](#examples) sections. The [Requirements](#requirements) section is populated by a pre-commit hook.
+1.  Complete the [Usage](#usage) and [Required IAM access policies](#required-iam-access-policies) sections. The [Examples](#examples) and [Requirements](#requirements) section are populated by a pre-commit hook.
 
 ### Commit your code and submit your module for review
 
