@@ -83,6 +83,12 @@ After the first PR for your module is merged, follow these post-merge steps:
 1.  Create a PR to enable the upgrade test by removing the `t.Skip` line in `tests/pr_test.go`.
 
 <!-- Remove the content in this previous H2 heading -->
+## Reference architectures
+
+<!--
+Add links to any reference architectures for this module.
+(Usually in the `/reference-architectures` directory.)
+-->
 
 ## Usage
 
