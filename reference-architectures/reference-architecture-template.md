@@ -13,16 +13,10 @@ keywords:
 subcollection: # From your toc.yaml file in IBM Cloud Docs
 
 authors:
-  - name: "name"
-    email: "email@us.ibm.com"
-  - name: "name"
-    email: "email@ibm.com"
-
-meta_description: Description not longer than 128 characters...
-
-meta_keywords: keyword, keyword, keyword
-
-meta_title: Duplicate of H1
+  - name: "author1"
+    url: "https://www.example.com/profile/author1"
+  - name: "author2"
+    url: "https://www.example.com/profile/author2"
 
 # The release that the reference architecture describes
 version: 1.0
@@ -35,7 +29,7 @@ deployment-url: url
 
 docs: https://cloud.ibm.com/docs/solution-guide
 
-image_source: https://github.com/terraform-ibm-modules/module/diagrams/xxx.svg
+image_source: https://github.com/terraform-ibm-modules/module/reference-architectures/xxx.svg
 
 related_links:
   - title: 'Title'
@@ -98,7 +92,8 @@ Include a short description, summary, or overview in a single paragraph that fol
 ## Architecture diagram
 {: #architecture-diagram}
 
-Include the architecture diagram that was created by using drawio and the IBM2 library and output to SVG.
+Include the architecture diagram SVG file that was created by using drawio and the IBM2 library. Publishing in IBM Cloud Docs requires that the diagram is stored in the `reference-architectures` directory.
+
 
 ![Enter image alt text here.](example-architecture-diagram.svg "Title text that shows on hover here"){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
 
