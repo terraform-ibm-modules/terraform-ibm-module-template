@@ -1,10 +1,3 @@
 {
-    "scc_goals": [
-        {
-            "scc_goal_id": "3000408",
-            "description": "Check whether Flow Logs for VPC are enabled",
-            "ignore_reason": "This is part of the test example and not the current module",
-            "is_valid": false
-        }
-    ]
+    "scc_goals": []
 }
