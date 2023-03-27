@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper/testhelper"
 )
 
 const nonDefaultExampleTerraformDir = "examples/non-default"
@@ -12,7 +13,12 @@ const nonDefaultExampleTerraformDir = "examples/non-default"
 func TestRunNonDefaultExample(t *testing.T) {
 	t.Parallel()
 
-	options := setupOptions(t, "non-default-tmp", nonDefaultExampleTerraformDir)
+	options := testhelper.TestOptionsDefaultWithVars(&testhelper.TestOptions{
+		Testing:       t,
+		TerraformDir:  nonDefaultExampleTerraformDir,
+		Prefix:        "non-default-tmp",
+		ResourceGroup: resourceGroup,
+	})
 
 	output, err := options.RunTestConsistency()
 	assert.Nil(t, err, "This should not have errored")
