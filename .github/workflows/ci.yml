@@ -8,7 +8,7 @@ on:
 
 jobs:
   call-terraform-ci-pipeline:
-    uses: terraform-ibm-modules/common-pipeline-assets/.github/workflows/common-terraform-module-ci-v2.yml@v1.11.2
+    uses: terraform-ibm-modules/common-pipeline-assets/.github/workflows/common-terraform-module-ci-v2.yml@9e4b3b6074bf192eb73a03f97ea13db590b1c431
     secrets: inherit
     with:
       craSCCv2: true
