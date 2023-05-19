@@ -1,3 +1,3 @@
 /********************************************************************
-This file is used to implement the ROOT module.
+TEST This file is used to implement the ROOT module.
 *********************************************************************/
