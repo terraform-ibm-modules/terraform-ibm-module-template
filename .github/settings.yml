@@ -26,4 +26,4 @@ repository:
 
   # Uncomment this topics property
   # and add a comma-separated list of topics to set on the repo.
-  # topics: core-team
+  # topics: terraform, ibm-cloud, terraform-module
