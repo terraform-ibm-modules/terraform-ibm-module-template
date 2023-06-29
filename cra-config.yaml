@@ -1,3 +1,4 @@
+# TEST
 # More info about this file at https://github.com/terraform-ibm-modules/common-pipeline-assets/blob/main/.github/workflows/terraform-test-pipeline.md#cra-config-yaml
 version: "v1"
 CRA_TARGETS:
