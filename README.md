@@ -12,7 +12,6 @@
 <!-- Remove the content in this H2 heading after completing the steps -->
 
 ## Submit a new module
-
 :+1::tada: Thank you for taking the time to contribute! :tada::+1:
 
 This template repository exists to help you create Terraform modules for IBM Cloud.
