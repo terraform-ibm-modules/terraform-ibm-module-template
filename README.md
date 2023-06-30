@@ -35,7 +35,7 @@ Follow this process to create and submit a Terraform module.
 1.  Create a repository from this repository template by clicking `Use this template` in the upper right of the GitHub UI.
 &emsp;&emsp;&emsp;&emsp;<br>For more information about creating a repository from a template, see the [GitHub docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 1.  Select `terraform-ibm-modules` as the owner.
-1.  Enter a name for the module in format `terraform-ibm-<NAME>`, where `<NAME>` reflects the type of infrastructure that the module manages.
+1.  Enter a name for the module in format `terraform-ibm-<name>`, where `<name>` reflects the type of infrastructure that the module manages.
 &emsp;&emsp;&emsp;&emsp;<br>Use hyphens as delimiters for names with multiple words (for example, terraform-ibm-`activity-tracker`).
 1.  Provide a short description of the module.
 &emsp;&emsp;&emsp;&emsp;<br>The description is displayed under the repository name on the [organization page](https://github.com/terraform-ibm-modules) and in the **About** section of the repository. Use the description to help users understand the purpose of your module. For more information, see [module names and descriptions](https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=module-names-and-descriptions) in the docs.
@@ -78,8 +78,6 @@ After you implement the logic for your module and create examples and tests, upd
 ### Post-merge steps
 
 After the first PR for your module is merged, follow these post-merge steps:
-
-1.  Create a PR to enable the upgrade test by removing the `t.Skip` line in `tests/pr_test.go`.
 
 <!-- Remove the content in this previous H2 heading -->
 ## Reference architectures
@@ -136,16 +134,15 @@ statement instead the previous block.
 <!-- BEGIN EXAMPLES HOOK -->
 ## Examples
 
-- [ Default example](examples/default)
-- [ Example that uses existing resources](examples/existing-resources)
-- [ Non default example](examples/non-default)
+- [ Basic example](examples/basic)
+- [ Complete example](examples/complete)
 <!-- END EXAMPLES HOOK -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3, < 1.6 |
 
 ## Modules
 
