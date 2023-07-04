@@ -131,6 +131,10 @@ statement instead the previous block.
 
 <!-- No permissions are needed to run this module.-->
 <!-- END MODULE HOOK -->
+
+<!-- BEGIN TF SUBMODULES HOOK -->
+<!-- END TF SUBMODULES HOOK -->
+
 <!-- BEGIN EXAMPLES HOOK -->
 ## Examples
 
