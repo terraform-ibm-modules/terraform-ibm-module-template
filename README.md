@@ -24,6 +24,8 @@ The default structure includes the following files:
 - `version.tf`: The required terraform and provider versions
 - `variables.tf`: The input variables for the module
 - `outputs.tf`: The values that are output from the module
+
+Use nested modules to split complex behavior into smaller modules that advanced users can choose from. Put nested modules under a `/modules` subdirectory. If you include more than one nested module, make the submodules [composable](https://developer.hashicorp.com/terraform/language/modules/develop/composition) by the caller. In other words, don't embed calls between submodules to create a deeply nested tree of modules.
 For more information, see [Module structure](https://terraform-ibm-modules.github.io/documentation/#/module-structure) in the project documentation.
 
 You can add other content to support what your module does and how it works. For example, you might add a `scripts/` directory that contains shell scripts that are run by a `local-exec` `null_resource` in the Terraform module.
