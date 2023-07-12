@@ -9,6 +9,16 @@
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+<!-- BEGIN TOC HOOK -->
+Table of Contents
+====================
+
+* [Terraform modules](#Terraform-modules)
+    * [Terraform Modules Template Project](#Terraform-Modules-Template-Project)
+* [Examples](#Examples)
+* [Contributing](#Contributing)
+<!-- END TOC HOOK -->
+
 <!-- Remove the content in this H2 heading after completing the steps -->
 
 ## Submit a new module
@@ -133,12 +143,6 @@ statement instead the previous block.
 
 <!-- No permissions are needed to run this module.-->
 <!-- END MODULE HOOK -->
-<!-- BEGIN EXAMPLES HOOK -->
-## Examples
-
-- [ Basic example](examples/basic)
-- [ Complete example](examples/complete)
-<!-- END EXAMPLES HOOK -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -162,6 +166,14 @@ No inputs.
 
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+<!-- BEGIN EXAMPLES HOOK -->
+## Examples
+
+- [ Basic example](examples/basic)
+- [ Complete example](examples/complete)
+<!-- END EXAMPLES HOOK -->
+
 <!-- BEGIN CONTRIBUTING HOOK -->
 
 <!-- Leave this section as is so that your module has a link to local development environment set up steps for contributors to follow -->
