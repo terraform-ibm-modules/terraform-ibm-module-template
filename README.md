@@ -8,16 +8,16 @@
 [![latest release](https://img.shields.io/github/v/release/terraform-ibm-modules/terraform-ibm-module-template?logo=GitHub&sort=semver)](https://github.com/terraform-ibm-modules/terraform-ibm-module-template/releases/latest)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+<!-- BEGIN OVERVIEW HOOK -->
+## Overview
+* [terraform-ibm-module-template](#terraform-ibm-module-template)
+* [Examples](./examples)
+    * [Basic example](./examples/basic)
+    * [Complete example](./examples/complete)
+* [Contributing](#contributing)
 
-<!-- BEGIN TOC HOOK -->
-Table of Contents
-====================
-
-* [Terraform modules](#Terraform-modules)
-    * [Terraform Modules Template Project](#Terraform-Modules-Template-Project)
-* [Examples](#Examples)
-* [Contributing](#Contributing)
-<!-- END TOC HOOK -->
+## terraform-ibm-module-template
+<!-- END OVERVIEW HOOK -->
 
 <!-- Remove the content in this H2 heading after completing the steps -->
 
@@ -101,7 +101,7 @@ See "Reference architecture" in Authoring Guidelines in the public documentation
 https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=reference-architecture
 -->
 
-## Usage
+### Usage
 
 <!--
 Add an example of the use of the module in the following code block.
@@ -114,7 +114,7 @@ unless real values don't help users know what to change.
 
 ```
 
-## Required IAM access policies
+### Required IAM access policies
 
 <!-- PERMISSIONS REQUIRED TO RUN MODULE
 If this module requires permissions, uncomment the following block and update
@@ -144,25 +144,25 @@ statement instead the previous block.
 <!-- No permissions are needed to run this module.-->
 <!-- END MODULE HOOK -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 
-## Modules
+### Modules
 
 No modules.
 
-## Resources
+### Resources
 
 No resources.
 
-## Inputs
+### Inputs
 
 No inputs.
 
-## Outputs
+### Outputs
 
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
