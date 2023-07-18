@@ -92,7 +92,7 @@ After you implement the logic for your module and create examples and tests, upd
 After the first PR for your module is merged, follow these post-merge steps:
 
 <!-- Remove the content in this previous H2 heading -->
-## Reference architectures
+### Reference architectures
 
 <!--
 Add links to any reference architectures for this module.
@@ -166,13 +166,6 @@ No inputs.
 
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
-<!-- BEGIN EXAMPLES HOOK -->
-## Examples
-
-- [ Basic example](examples/basic)
-- [ Complete example](examples/complete)
-<!-- END EXAMPLES HOOK -->
 
 <!-- BEGIN CONTRIBUTING HOOK -->
 
