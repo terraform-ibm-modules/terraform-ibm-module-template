@@ -13,6 +13,18 @@ Update status and "latest release" badges:
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 <!-- Add a description of module(s) in this repo -->
+TODO: Replace me with description of the module(s) in this repo
+
+
+<!-- Below content is automatically populated via pre-commit hook -->
+<!-- BEGIN OVERVIEW HOOK -->
+## Overview
+* [terraform-ibm-module-template](#terraform-ibm-module-template)
+* [Examples](./examples)
+    * [Basic example](./examples/basic)
+    * [Complete example](./examples/complete)
+* [Contributing](#contributing)
+<!-- END OVERVIEW HOOK -->
 
 
 <!--
@@ -24,17 +36,7 @@ https://terraform-ibm-modules.github.io/documentation/#/implementation-guideline
 <!-- ## Reference architectures -->
 
 
-<!-- Below content is automatically populated via pre-commit hook -->
-<!-- BEGIN OVERVIEW HOOK -->
-## Overview
-* [terraform-ibm-module-template](#terraform-ibm-module-template)
-* [Examples](./examples)
-    * [Basic example](./examples/basic)
-    * [Complete example](./examples/complete)
-* [Contributing](#contributing)
-
 ## terraform-ibm-module-template
-<!-- END OVERVIEW HOOK -->
 
 ### Usage
 
