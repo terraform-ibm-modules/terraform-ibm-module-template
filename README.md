@@ -36,7 +36,7 @@ https://terraform-ibm-modules.github.io/documentation/#/implementation-guideline
 <!-- ## Reference architectures -->
 
 
-## module-template
+## terraform-ibm-module-template
 
 ### Usage
 
