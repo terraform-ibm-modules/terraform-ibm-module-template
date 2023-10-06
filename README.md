@@ -36,6 +36,7 @@ https://terraform-ibm-modules.github.io/documentation/#/implementation-guideline
 <!-- ## Reference architectures -->
 
 
+<!-- This heading should always match the name of the root level module (aka the repo name) -->
 ## terraform-ibm-module-template
 
 ### Usage
