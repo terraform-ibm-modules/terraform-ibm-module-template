@@ -6,7 +6,7 @@ toolchain go1.21.3
 
 require (
 	github.com/stretchr/testify v1.8.4
-	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.23.8
+	github.com/terraform-ibm-modules/ibmcloud-terratest-wrapper v1.23.9
 )
 
 require (
@@ -16,10 +16,10 @@ require (
 	cloud.google.com/go/iam v1.1.1 // indirect
 	cloud.google.com/go/storage v1.30.1 // indirect
 	dario.cat/mergo v1.0.0 // indirect
-	github.com/IBM-Cloud/bluemix-go v0.0.0-20231012044905-dfb1429fde6f // indirect
+	github.com/IBM-Cloud/bluemix-go v0.0.0-20231017073329-75ebe90c98ba // indirect
 	github.com/IBM-Cloud/power-go-client v1.5.0 // indirect
 	github.com/IBM/go-sdk-core/v5 v5.14.1 // indirect
-	github.com/IBM/platform-services-go-sdk v0.51.0 // indirect
+	github.com/IBM/platform-services-go-sdk v0.52.0 // indirect
 	github.com/IBM/vpc-go-sdk v1.0.2 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230828082145-3c4c8a2d2371 // indirect
@@ -68,7 +68,7 @@ require (
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
 	github.com/hashicorp/go-version v1.6.0 // indirect
 	github.com/hashicorp/hcl/v2 v2.17.0 // indirect
-	github.com/hashicorp/terraform-json v0.17.0 // indirect
+	github.com/hashicorp/terraform-json v0.17.1 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
