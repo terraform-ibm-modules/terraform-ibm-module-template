@@ -24,5 +24,5 @@ repository:
   # and update the description to the current repo description.
   # description: ""
 
-  # Use a comma-separated list of topics to set on the repo.
+  # Use a comma-separated list of topics to set on the repo (ensure not to use any caps in the topic string).
   topics: terraform, ibm-cloud, terraform-module
