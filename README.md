@@ -1,5 +1,5 @@
-<!-- Update the title -->
-# Terraform Modules Template Project
+<!-- Update this title.with a descriptive name. Use sentence case. -->
+# Terraform modules template project
 
 <!--
 Update status and "latest release" badges:
@@ -12,11 +12,18 @@ Update status and "latest release" badges:
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-<!-- Add a description of module(s) in this repo -->
-TODO: Replace me with description of the module(s) in this repo
+<!--
+Add a description of modules in this repo.
+Expand on the repo short description in the .github/settings.yml file.
+
+For information, see "Module names and descriptions" at
+https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=module-names-and-descriptions
+-->
+
+TODO: Replace this with a description of the modules in this repo.
 
 
-<!-- Below content is automatically populated via pre-commit hook -->
+<!-- The following content is automatically populated by the pre-commit hook -->
 <!-- BEGIN OVERVIEW HOOK -->
 ## Overview
 * [terraform-ibm-module-template](#terraform-ibm-module-template)
@@ -28,15 +35,15 @@ TODO: Replace me with description of the module(s) in this repo
 
 
 <!--
-If this repo contains any reference architectures, uncomment the heading below and links to them.
+If this repo contains any reference architectures, uncomment the heading below and link to them.
 (Usually in the `/reference-architectures` directory.)
-See "Reference architecture" in Authoring Guidelines in the public documentation at
+See "Reference architecture" in the public documentation at
 https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=reference-architecture
 -->
 <!-- ## Reference architectures -->
 
 
-<!-- This heading should always match the name of the root level module (aka the repo name) -->
+<!-- Replace this heading should with the name of the root level module (the repo name) -->
 ## terraform-ibm-module-template
 
 ### Usage
@@ -82,7 +89,7 @@ statement instead the previous block.
 <!-- No permissions are needed to run this module.-->
 
 
-<!-- Below content is automatically populated via pre-commit hook -->
+<!-- The following content is automatically populated by the pre-commit hook -->
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ### Requirements
 
@@ -107,7 +114,7 @@ No inputs.
 No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-<!-- Leave this section as is so that your module has a link to local development environment set up steps for contributors to follow -->
+<!-- Leave this section as is so that your module has a link to local development environment set-up steps for contributors to follow -->
 ## Contributing
 
 You can report issues and request features for this module in GitHub issues in the module repo. See [Report an issue or request a feature](https://github.com/terraform-ibm-modules/.github/blob/main/.github/SUPPORT.md).
