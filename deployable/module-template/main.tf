@@ -1,4 +1,3 @@
 module "module_template" {
-  source  = "../.."
+  source = "../.."
 }
-
