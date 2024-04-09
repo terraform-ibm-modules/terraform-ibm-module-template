@@ -21,8 +21,8 @@ TODO: Replace me with description of the module(s) in this repo
 ## Overview
 * [terraform-ibm-module-template](#terraform-ibm-module-template)
 * [Examples](./examples)
+    * [Advanced example](./examples/advanced)
     * [Basic example](./examples/basic)
-    * [Complete example](./examples/complete)
 * [Contributing](#contributing)
 <!-- END OVERVIEW HOOK -->
 
