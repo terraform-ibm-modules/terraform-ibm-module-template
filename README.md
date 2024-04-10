@@ -1,4 +1,4 @@
-<!-- Update this title.with a descriptive name. Use sentence case. -->
+<!-- Update this title with a descriptive name. Use sentence case. -->
 # Terraform modules template project
 
 <!--
@@ -43,7 +43,7 @@ https://terraform-ibm-modules.github.io/documentation/#/implementation-guideline
 <!-- ## Reference architectures -->
 
 
-<!-- Replace this heading should with the name of the root level module (the repo name) -->
+<!-- Replace this heading with the name of the root level module (the repo name) -->
 ## terraform-ibm-module-template
 
 ### Usage
