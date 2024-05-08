@@ -72,13 +72,13 @@ Manage > Access (IAM) > Access groups > Access policies.
 <!--
 You need the following permissions to run this module.
 
-- Account Management
-    - **Sample Account Service** service
+- IAM Services
+    - **Sample Cloud Service** service
         - `Editor` platform access
-        - `Manager` service access
-    - IAM Services
-        - **Sample Cloud Service** service
-            - `Administrator` platform access
+        - `Manager` platform access
+- Account Management Services
+    - **Sample Cloud Service** service
+        - `Editor` platform access
 -->
 
 <!-- NO PERMISSIONS FOR MODULE
