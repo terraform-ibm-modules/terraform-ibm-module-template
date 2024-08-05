@@ -14,11 +14,10 @@ module "resource_group" {
 # COS instance
 ########################################################################################################################
 
-resource "ibm_resource_instance" "cos_instance" {
-  name              = "${var.prefix}-cos"
+module "vpc" {
+  source            = "../.."
   resource_group_id = module.resource_group.resource_group_id
-  service           = "cloud-object-storage"
-  plan              = "standard"
-  location          = "global"
-  tags              = var.resource_tags
+  vpc_name          = "soaib-vpc0"
+  subnets           = var.subnets
+  locations         = var.locations
 }

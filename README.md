@@ -96,6 +96,7 @@ statement instead the previous block.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_ibm"></a> [ibm](#requirement\_ibm) | >= 1.64.0, < 2.0.0 |
 
 ### Modules
 
@@ -103,15 +104,40 @@ No modules.
 
 ### Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [ibm_is_public_gateway.public_gateway](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/is_public_gateway) | resource |
+| [ibm_is_vpc.vpc](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/is_vpc) | resource |
+| [ibm_is_vpc_address_prefix.vpc_address_prefixes](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/is_vpc_address_prefix) | resource |
+| [ibm_is_vpc.vpc](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/data-sources/is_vpc) | data source |
 
 ### Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_address_prefixes"></a> [address\_prefixes](#input\_address\_prefixes) | List of Prefixes for the vpc | <pre>list(object({<br>    name     = string<br>    location = string<br>    ip_range = string<br>  }))</pre> | `[]` | no |
+| <a name="input_auto_assign_address_prefix"></a> [auto\_assign\_address\_prefix](#input\_auto\_assign\_address\_prefix) | Set to true to create a default address prefix automatically for each zone in the VPC. | `bool` | `false` | no |
+| <a name="input_create_vpc"></a> [create\_vpc](#input\_create\_vpc) | Indicates whether user wants to use an existing vpc or create a new one. Set it to true to create a new vpc | `bool` | `true` | no |
+| <a name="input_default_network_acl_name"></a> [default\_network\_acl\_name](#input\_default\_network\_acl\_name) | Name of the default network access control list (ACL). | `string` | `null` | no |
+| <a name="input_default_routing_table_name"></a> [default\_routing\_table\_name](#input\_default\_routing\_table\_name) | Name of the Default Routing Table | `string` | `null` | no |
+| <a name="input_default_security_group_name"></a> [default\_security\_group\_name](#input\_default\_security\_group\_name) | Name of the Default Security Group | `string` | `null` | no |
+| <a name="input_enable_classic_access"></a> [enable\_classic\_access](#input\_enable\_classic\_access) | Set to true to create a VPC that can connect to classic infrastructure resources. | `bool` | `false` | no |
+| <a name="input_existing_vpc_id"></a> [existing\_vpc\_id](#input\_existing\_vpc\_id) | The ID of the existing vpc. Required if 'create\_vpc' is false. | `string` | `null` | no |
+| <a name="input_locations"></a> [locations](#input\_locations) | locations | <pre>list(object({<br>    zone = string<br>    address_prefix = optional(object({<br>      name = optional(string, null)<br>      cidr = optional(string, null)<br>    }), null)<br><br>    public_gateway = optional(object({<br>      name        = optional(string, null)<br>      floating_ip = optional(string, null)<br>      tags        = optional(list(string), [])<br>    }), null)<br><br>    subnets = optional(list(object({<br>      name            = string<br>      access_tags     = optional(list(string), [])<br>      ipv4_cidr_block = string<br>      network_acl     = optional(string, null)<br>      public_gateway  = optional(string, null)<br>      tags            = optional(list(string), [])<br>    })), [])<br>  }))</pre> | `[]` | no |
+| <a name="input_no_sg_acl_rules"></a> [no\_sg\_acl\_rules](#input\_no\_sg\_acl\_rules) | Set to true to delete all rules attached to default security group and default network ACL for a new VPC. This attribute has no impact on update. | `bool` | `false` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | The value that you would like to prefix to the name of the resources provisioned by this module. Explicitly set to null if you do not wish to use a prefix. This value is ignored if using one of the optional variables for explicit control over naming. | `string` | `null` | no |
+| <a name="input_public_gateways"></a> [public\_gateways](#input\_public\_gateways) | public gateways | <pre>list(object({<br>    zone        = string<br>    name        = optional(string, null)<br>    floating_ip = optional(map(string))<br>    tags        = optional(list(string), [])<br>  }))</pre> | `[]` | no |
+| <a name="input_resource_group_id"></a> [resource\_group\_id](#input\_resource\_group\_id) | The resource group ID where the VPC to be created. | `string` | n/a | yes |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | Subnets to create | <pre>list(object({<br>    name            = string<br>    zone            = string<br>    access_tags     = optional(list(string), [])<br>    ipv4_cidr_block = string<br>    network_acl     = optional(string, null)<br>    public_gateway  = optional(string, null)<br>    tags            = optional(list(string), [])<br>  }))</pre> | `[]` | no |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | Name of the vpc | `string` | `null` | no |
+| <a name="input_vpc_tags"></a> [vpc\_tags](#input\_vpc\_tags) | List of tags to associate with the VPC. | `list(string)` | `[]` | no |
 
 ### Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_address_prefix"></a> [address\_prefix](#output\_address\_prefix) | n/a |
+| <a name="output_vpc"></a> [vpc](#output\_vpc) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 <!-- Leave this section as is so that your module has a link to local development environment set-up steps for contributors to follow -->
