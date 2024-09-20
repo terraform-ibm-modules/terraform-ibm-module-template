@@ -65,9 +65,9 @@ unless real values don't help users know what to change.
 If this module requires permissions, uncomment the following block and update
 the sample permissions, following the format.
 Replace the 'Sample IBM Cloud' service and roles with applicable values.
-The required information can usually be found in the services official 
-IBM Cloud documentation. 
-To view all available service permissions, you can go in the 
+The required information can usually be found in the services official
+IBM Cloud documentation.
+To view all available service permissions, you can go in the
 console at Manage > Access (IAM) > Access groups and click into an existing group
 (or create a new one) and in the 'Access' tab click 'Assign access'.
 -->
