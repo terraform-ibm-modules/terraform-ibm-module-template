@@ -16,7 +16,7 @@ output "account_id" {
 
 output "guid" {
   description = "The GUID of the resource instance."
-  value       = ibm_resource_instance.cos_instance.account_id
+  value       = ibm_resource_instance.cos_instance.guid
 }
 
 output "id" {
