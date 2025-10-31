@@ -8,7 +8,7 @@
 _extends: repo-settings:.github/common-settings-v2.yml
 
 # repo-specific settings
-#
+# #
 repository:
   # See https://terraform-ibm-modules.github.io/documentation/#/implementation-guidelines?id=module-names-and-descriptions
 
