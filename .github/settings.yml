@@ -7,8 +7,6 @@
 #
 _extends: repo-settings:.github/common-settings-v2.yml
 
-permissions: write-all
-
 # repo-specific settings
 #
 repository:
