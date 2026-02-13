@@ -146,6 +146,11 @@ No modules.
 | <a name="output_id"></a> [id](#output\_id) | The unique identifier of the resource instance. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
+## Known issues
+
+<!-- Update this if any known issues or limitations -->
+There are currently no known issues or limitations at this time.
+
 <!-- Leave this section as is so that your module has a link to local development environment set-up steps for contributors to follow -->
 ## Contributing
 
