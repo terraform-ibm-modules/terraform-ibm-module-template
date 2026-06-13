@@ -29,14 +29,14 @@ TODO: Replace this with a description of the modules in this repo.
 ## Overview
 <ul>
   <li><a href="#terraform-ibm-module-template">terraform-ibm-module-template</a></li>
-  <li><a href="./examples">Examples</a>
+  <li><a href="https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/examples">Examples</a>
     <ul>
       <li>
-        <a href="./examples/advanced">Advanced example</a>
+        <a href="https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/examples/advanced">Advanced example</a>
         <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=module-template-advanced-example&repository=https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/examples/advanced"><img src="https://img.shields.io/badge/Deploy%20with%20IBM%20Cloud%20Schematics-0f62fe?style=flat&logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
       </li>
       <li>
-        <a href="./examples/basic">Basic example</a>
+        <a href="https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/examples/basic">Basic example</a>
         <a href="https://cloud.ibm.com/schematics/workspaces/create?workspace_name=module-template-basic-example&repository=https://github.com/terraform-ibm-modules/terraform-ibm-module-template/tree/main/examples/basic"><img src="https://img.shields.io/badge/Deploy%20with%20IBM%20Cloud%20Schematics-0f62fe?style=flat&logo=ibm&logoColor=white&labelColor=0f62fe" alt="Deploy with IBM Cloud Schematics" style="height: 16px; vertical-align: text-bottom; margin-left: 5px;"></a>
       </li>
     </ul>
